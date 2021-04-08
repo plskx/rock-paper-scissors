@@ -5,11 +5,46 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Rock Paper Scissors</title>
-        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
     </head>
 
     <body>
-        <h1>test</h1>
+        <header>
+            <h1 class="animate__animated animate__bounceIn">
+                Rock Paper Scissors
+            </h1>
+        </header>
+
+        <main class="main">
+            <div class="score-board">
+                <h2 class="score-heading">Score</h2>
+                <div class="score">
+                    <section class="player-section">
+                        <p class="player-score">Player: 0</p>
+                        <!-- TODO: put url() here -->
+                        <i class=""></i>
+                    </section>
+                    <section class="computer-section">
+                        <p class="computer-score">Computer: 0</p>
+                        <!-- TODO: put url() here -->
+                    </section>
+                </div>
+            </div>
+
+            <div class="choices">
+                <button class="btn rock" name="rock"></button>
+                <button class="btn paper" name="paper"></button>
+                <button class="btn scissors" name="scissors"></button>
+            </div>
+
+            <div class="hidden">
+                <button class="btn-reset">Reset</button>
+            </div>
+        </main>
 
         <script src="script.js"></script>
     </body>

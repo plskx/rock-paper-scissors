@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+* {
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.rock {
+    background-image: url(./img/rock.png);
+}
+
+.paper {
+    background-image: url(./img/paper.png);
+}
+
+.scissors {
+    background-image: url(./img/scissor.png);
+}
+
+button {
+    border: 0px solid;
+    border-radius: 15px;
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+}
+
+.btn:hover {
+    background-color: rgb(255, 191, 161);
+    color: white;
+}
+
+.btn-reset {
+    background-color: rgb(255, 191, 161);
+    font-weight: bold;
+    height: 40px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.player-section {
+    padding-right: 50px;
+}
+
+.btn-reset {
+    background-color: rgb(255, 191, 161);
+    font-weight: bold;
+    height: 40px;
+}
+
+.hidden {
+    visibility: hidden;
+}
