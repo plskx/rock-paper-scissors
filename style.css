@@ -29,6 +29,7 @@ button {
   background-size: cover;
   background-repeat: no-repeat;
   margin: 10px;
+  cursor: pointer;
 }
 
 .btn:hover {

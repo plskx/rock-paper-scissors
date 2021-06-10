@@ -3,13 +3,13 @@ let computerScore = 0;
 
 const paraPlayerScore = document.querySelector(".player-score");
 const paraComputerScore = document.querySelector(".computer-score");
+
 const heading = document.querySelector(".score-heading");
 
 const hiddenEl = document.querySelector(".hidden");
 const btnReset = document.querySelector(".btn-reset");
 
 const buttons = document.querySelectorAll(".btn");
-buttons.forEach((btn) => btn.addEventListener("click", playRound));
 
 function computer() {
   let picks = ["rock", "paper", "scissors"];
@@ -22,11 +22,6 @@ function playRound(e) {
 
   console.log(`player: ${playerSelection}`);
   console.log(`computer: ${computerSelection}`);
-
-  if (playerScore == 5 || computerScore == 5) {
-    hiddenEl.classList.remove("hidden");
-    return;
-  }
 
   if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -45,14 +40,33 @@ function playRound(e) {
   // update the score
   paraPlayerScore.textContent = `Player: ${playerScore}`;
   paraComputerScore.textContent = `Computer: ${computerScore}`;
+
+  if (playerScore === 5 || computerScore === 5) {
+    // disable button
+    hiddenEl.classList.remove("hidden");
+    buttons.forEach((button) => {
+      button.disabled = true;
+    });
+    console.log("55");
+    return;
+  }
 }
 
-// reset
-btnReset.addEventListener("click", () => {
+function resetGame() {
+  // enable the button again
+  buttons.forEach((button) => {
+    button.disabled = false;
+  });
+
   heading.textContent = "Score";
   hiddenEl.classList.add("hidden");
+
   playerScore = 0;
   computerScore = 0;
+
   paraPlayerScore.textContent = `Player: ${playerScore}`;
   paraComputerScore.textContent = `Computer: ${computerScore}`;
-});
+}
+
+btnReset.addEventListener("click", resetGame);
+buttons.forEach((btn) => btn.addEventListener("click", playRound));
