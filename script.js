@@ -20,9 +20,6 @@ function playRound(e) {
   playerSelection = e.target.name;
   computerSelection = computer();
 
-  console.log(`player: ${playerSelection}`);
-  console.log(`computer: ${computerSelection}`);
-
   if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "paper" && computerSelection === "rock") ||
